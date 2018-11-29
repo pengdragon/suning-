@@ -1,1 +1,17 @@
 *{padding:0;margin:0}
+a{
+    text-decoration: none;
+    outline: 0;
+}
+.header {
+    width: 970px;
+    height: 100px;
+    margin: 0 auto;
+}
+.header .logo{
+    float: left;
+    width: 189px;
+    height: 100%;
+    display: block;
+    background: url(../images/sign_in/logo.png) no-repeat center;   
+}
