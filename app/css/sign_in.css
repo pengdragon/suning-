@@ -15,3 +15,79 @@ a{
     display: block;
     background: url(../images/sign_in/logo.png) no-repeat center;   
 }
+
+.header .bind-phone {
+    float: left;
+    color: #333;
+    background: #fefff1;
+    border: 1px solid #fecd66;
+    line-height: 16px;
+    padding: 4px 6px;
+    font-size: 13px;
+}
+.header .advise {
+    float: right;
+    margin-top:8px;
+    color:#ccc;
+    font-size: 13px;
+}
+.header .advise:hover{
+    color:red;
+}
+.header .advise i {
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    font-size: 12px;
+    font-family: simsun;
+    background: url(../images/sign_in/function.png) -67px -27px no-repeat;
+}
+.main{
+    position: relative;
+    margin:0 auto;
+    min-width:970px;
+    height: 570px;
+    background: url(../images/sign_in/0.png) center no-repeat;
+
+}
+.main .form-box{
+    width:360px;
+    height: 409px;
+    background: white;
+    position: absolute;
+    top:50px;
+    right:250px;
+}
+.main .form-box a{
+    display: block;
+    height: 50px;
+    width:180px;
+    float:left;
+    text-align: center;
+}
+.main .form-box a span{
+    width:180px;
+    height: 20px;
+    line-height: 50px;
+    color:black;
+
+}
+.main .form-box a span:hover{
+    color:red;
+}
+.main .form-box .left span{
+    display: block;
+    width:179px;
+    border-right:1px solid #ccc;
+}
+.main .form-box a i{
+    display: block;
+    height: 4px;
+    width:70px;
+    background: red;
+    margin-left:55px;
+}
+.main .form-box .left{
+
+}
