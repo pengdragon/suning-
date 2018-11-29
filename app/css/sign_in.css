@@ -98,5 +98,25 @@ a{
 }
 .main .form-box .right i{
     display:none;
-
+}
+.main .form-box .middle{
+    margin-top:50px;
+    height: 160px;
+    width:360px;
+    position: relative;
+}
+.main .form-box .middle .left_mask{
+    height: 141px;
+    width:141px; 
+    overflow: hidden;
+    position: absolute;
+    left:50%;
+    margin-left:-70px;
+}
+.main .form-box .middle .right_mask{
+    height: 160px;
+    width:160px;
+    position:absolute;
+    right:0px;
+    top:-30px;
 }
