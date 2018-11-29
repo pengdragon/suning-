@@ -88,7 +88,7 @@
                                     var bool = reg.phone(this.value);
                                     //如果手机合法，再进入后台判断
                                     if(bool){
-                                        sendAjax("../php/judge_register.php",{
+                                        sendAjax("../../server/php/judge_register.php",{
                                             data:{phone:this.value}
                                         })
                                         .then(res=>{
@@ -224,7 +224,7 @@
                         }
                     }
                     if(i==arr.length){
-                        sendAjax('../php/register.php',{
+                        sendAjax('../../server/php/register.php',{
                             method:'post',
                             data:{phone:phone,password:password}  
                           }).then(res=>{
