@@ -69,9 +69,13 @@ a{
 .main .form-box a span{
     width:180px;
     height: 20px;
-    line-height: 50px;
     color:black;
-
+    margin-top:15px;
+    margin-bottom: 11px;
+}
+.main .form-box .top{
+    border-bottom: 1px solid #ccc;
+    height: 50px;
 }
 .main .form-box a span:hover{
     color:red;
@@ -79,15 +83,20 @@ a{
 .main .form-box .left span{
     display: block;
     width:179px;
-    border-right:1px solid #ccc;
+    border-right:1px solid #eee;
+}
+.main .form-box .right span{
+    display: block;
+    width:180px;
 }
 .main .form-box a i{
     display: block;
     height: 4px;
     width:70px;
-    background: red;
+    background: orange;
     margin-left:55px;
 }
-.main .form-box .left{
+.main .form-box .right i{
+    display:none;
 
 }

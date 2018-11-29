@@ -77,7 +77,7 @@
                         if(this.name=='phone'){
                             let $aliasTip=this.parentNode.parentNode.nextElementSibling;
                             //console.log($aliasTip)
-                            let $ok = this.nextElementSibling;
+                             _this.$ok = this.nextElementSibling;
                             $aliasTip.style.opacity="0";
                             this.onblur = function(){
                                 if(this.value==""){
@@ -97,12 +97,14 @@
                                             if(res.code=="10000"){
                                                 $aliasTip.style.opacity="1";
                                                 $aliasTip.innerHTML="该手机号已被注册";
+                                                _this.$ok.style.display='none';
                                             }else if(res.code=="0"){
                                                 //后台判断合法，才能点击获取验证码
                                                 _this.$sendSmsCode.addEventListener('click',$sendSmsCode,false);
+                                                _this.$ok.style.display="block";
                                             }
                                         })
-                                        $ok.style.display="block";
+                                       
                                     }else{
                                         $aliasTip.style.opacity="1";
                                         $aliasTip.innerHTML="格式不正确，请输入正确的手机号";
@@ -228,7 +230,7 @@
                             method:'post',
                             data:{phone:phone,password:password}  
                           }).then(res=>{
-                              console.log(res);
+                            this.$submit_btn.href='sign_in.html';
                           })
                     } 
                  }
