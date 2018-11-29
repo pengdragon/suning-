@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+
+    <div class="header clearfix">
+        <a href="sign_in.html" class="login">我已经注册，马上登录</a>
+        <a href="../index.html" class="logo"></a>
+        <div class="logo-txt">欢迎注册</div>     
+    </div>
+    <div class="main">
+        <form action="" id="enter_Reg_form" submit="return false"method="GET">
+            <div class='reg-form'>
+                <div class="gift-pkg"style="height:25px;">
+                    <i></i>
+                    注册领
+                    <em>199</em>
+                    元大礼包
+                </div>
+                <div class="phone-field">
+                    <div class="input-box clearfix">
+                        <label for="mobileAlias" class="title">手机号码</label>
+                        <div class="input-wrapper">
+                                <input type="text" id="mobileAlias" name="phone" placeholder="请输入手机号" autocomplete="off">
+                                <i class="ok"></i>
+                        </div>
+                      
+                    </div>
+                    <div id="aliasTip">格式不正确，请输入正确的手机号</div>
+                </div>
+                <div class="msg-field">
+                    <div class="input-box clearfix">
+                        <label for="smsCode" class="title">手机验证码</label>
+                        <div class="input-wrapper">
+                            <input type="text" id='smsCode' name="mobileCode" maxlegth="6" placeholder="请输入验证码" autocomplete="off">
+                            <!-- <i class="ok">验证提示</i> -->
+                        </div>
+                        <a  id="sendSmsCode">获取短信验证码</a>
+                    </div>
+                    <div class="send-success">验证码已发送，<i style="color:red">8</i>小时内有效</div>
+                    <div class="error">请输入6位数字的验证码</div>
+                </div>
+                <div class="password-field">
+                    <div class="input-box clearfix">
+                        <label class="title" for="password">设置密码</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="password" placeholder="请输入密码" name="password" autocomplete="off">
+                            <i class="ok"></i>
+                        </div>
+                    </div>
+                    <div class="suggestion hide" style="line-height:20px;">6-20个字符，由字母，数字和符号两种以上组合而成</div>
+                    <div class="setPsw_rank">
+                        <span class="safety">安全程度</span>
+                        <span class="low">低</span>
+                        <span class="middle">中</span>
+                        <span class="height">高</span>
+                    </div>
+                    <!-- <div class="setPsw_rank"></div> -->
+                </div>
+                <div id="protocolTip">
+                    <a class="submit-btn">提交注册</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="reg-protocol">
+            <div class="mask"></div>
+            <div class="content">
+                <div class="head">
+                    <span>注册协议</span>
+                    <a href="../index.html">关闭</a>
+                </div>
+                <div class="foot">
+                        <a class="agree-btn" href="#">同意并继续</a>
+                </div>
+            </div>      
+    </div>
+  
+    <!-- <div></div> -->
+    <script src="../js/ajax0.1.0.js"></script>
+    <script src="../js/register"></script>
+    <script>
+      register.init('#enter_Reg_form');
+    </script>
+</body>
+</html>

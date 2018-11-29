@@ -1,0 +1,270 @@
+*{padding:0;margin:0}
+body{
+    background:#f8f8f8;
+}
+input{
+    outline: none;
+    }
+a{
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+}
+.header{
+    width:990px;
+    height: 88px;
+    margin:0 auto;
+}
+.header .login{
+    float: right;
+    margin-top:63px;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+}
+.header .logo{
+    float: left;
+    width:190px;
+    height: 100%;
+    margin-right:24px;
+    background: url(../images/register/sprite.png) no-repeat;
+}
+.header .logo-txt{
+    float:left;
+    font-size: 18px;
+    color:#666;
+    line-height: 88px;
+}
+.main{
+    width:990px;
+    margin:0 auto;
+    border:3px solid #f90;
+    background: #fff;
+    padding:55px 0;
+}
+form{
+   display: block;
+}
+.reg-form{
+    width:380px;
+    margin:0 auto;
+}
+.reg-form .gift-pkg{
+    font-size: 14px;
+    line-height: 17px;
+    padding-left:2px;
+    margin-bottom:17px;
+}
+.reg-form .gift-pkg i{
+    float: left;
+    width: 19px;
+    height: 17px;
+    margin-right: 6px;
+    display: block;
+    background: url('../images/register/sprite.png') no-repeat top -93px left -75px;
+}
+.reg-form .gift-pkg em{
+    color:red;
+}
+.reg-form .input-box{
+    width:378px;
+    height: 38px;
+    border:1px solid #ccc;
+    line-height: 38px;
+}
+
+.phone-field .input-wrapper{
+    width:281px;
+}
+    .reg-form .phone-field .input-wrapper {
+    position: relative;
+    float: left;
+    height: 100%;
+    position: relative;
+}
+.reg-form .input-box .input-wrapper input {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: #333;
+    border: 0;
+    background: 0;
+}
+.reg-form .input-box .input-wrapper .ok{
+    position: absolute;
+    top:11px;
+    right:12px;
+    width:16px;
+    height: 16px;
+    background: red;
+    display:none;
+    background: url('../images/register/sprite.png') no-repeat top -93px left -120px;
+}
+
+.reg-form .input-box{
+    width:378px;
+    height: 38px;
+    border:1px solid #ccc;
+    line-height: 38px;
+}
+
+.reg-form .input-box .title,.reg-form .password-field .title{
+    float:left;
+    width:86px;
+    padding-left:11px;
+}
+.reg-form .msg-field .input-wrapper{
+    width:142px;
+    position: relative;
+    float: left;
+    height: 100%;
+}
+.reg-form .password-field .input-wrapper{
+    width:281px;
+    position: relative;
+    float: left;
+    height: 100%;
+}
+.reg-form .msg-field .input-wrapper input{
+    display: inline-block;
+    width:100%;
+    height: 100%;
+    font-size: 14px;
+    color:#ccc;
+}
+.reg-form .msg-field #sendSmsCode {
+     float: left;
+    width: 138px;
+    height: 100%;
+    line-height: 38px;
+    text-align: center;
+    background: #f5f5f5;
+    border: 1px solid #bbb;
+    font-size: 14px;
+    margin: -1px -1px 0 0;
+    text-decoration: none; 
+    color:black;
+}
+.reg-form .msg-field #sendSmsCode:hover{
+    color:orangered;
+}
+.reg-form .submit-btn {
+    width: 100%;
+    line-height: 40px;
+    background: #f60;
+    font-size: 20px;
+    color: #fff;
+    margin: 24px 0 5px;
+    display: block;
+    border-radius: 2px;
+    text-align: center;
+    text-decoration: none;
+}
+.reg-protocol{
+position: fixed;
+width:610px;
+height: 430px;
+top:50%;
+left:50%;
+margin-left:-350px;
+margin-top:-215px;
+z-index: 999;
+}
+ .mask{
+width:610px;
+height: 430px;
+background: #ccc;
+}
+.content{
+width:556px;
+height: 420px;
+position: absolute;
+top:5px;
+left:5px;
+background: #fff;
+padding:0 22px;
+}
+.content .head{
+height: 40px;
+line-height: 40px;
+box-shadow: inset 0 -1px 0 0 #ddd;
+}
+.content .head span{
+float:left;
+font-size: 14px;
+color:#333;
+font-weight: 700;
+}
+.reg-protocol .content .head a{
+color:#ccc;
+float:right;
+text-align: center;
+}
+.reg-protocol .content .agree-btn{
+display: block;
+width: 140px;
+height: 30px;
+line-height: 30px;
+border-radius: 2px;
+text-align: center;
+background: #f60;
+font-size: 14px;
+color: #fff;
+margin: 6px auto 0;
+position: relative;
+top:320px;
+}
+.reg-form .msg-field .send-success,
+.reg-form .phone-field #aliasTip,
+.reg-form .password-field .suggestion
+{
+    height: 20px;
+    font-size: 9px;
+    color:red;
+    opacity: 0;
+    line-height: 20px;
+}
+.reg-form .msg-field .send-success{
+    color:#ccc;
+}
+.reg-form .password-field .suggestion{
+    color:#ccc;
+}
+.reg-form .msg-field .error{
+    display: none;
+}
+.reg-form .password-field {
+    margin-bottom: 50px;
+    width:378px;
+    height: 38px;
+    border:1px solid #ccc;
+    line-height: 38px;
+}
+.reg-form .password-field .input-box .input-wrapper input{
+    display: inline-block;
+    width:100%;
+    height: 100%;
+    font-size: 14px;
+    color:#ccc;
+}
+.reg-form .password-field .setPsw_rank{
+   opacity: 0;
+}
+.reg-form .password-field .setPsw_rank span{
+    width:50px;
+    height: 16px;
+    background: #666;
+    margin-left:2px;
+    float:left;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+}
+.reg-form .password-field .setPsw_rank .low{
+    background: #fa0;
+}
+.reg-form .password-field .setPsw_rank .safety{
+    margin-left:0px;
+    background: wheat;
+}
