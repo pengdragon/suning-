@@ -14,11 +14,28 @@ const sign_in = (function(){
         },
         event(){
             var _this = this;
-            this.$left.onclick = function(){
-                
-                _this.$middle.onmouseenter = function(){
-
+            this.$left.onclick = function(){  
+               
+            }
+            this.$middle.onmouseenter = function(){
+                console.log(4)
+                console.log(_this.$left)
+                if(_this.$left){
+                    let newMove = new StartMove(_this.$left_mask); 
+                    newMove.animateTo({left:-80},100,res=>{
+                    });
                 }
+               
+            }
+            this.$middle.onmouseleave = function(){
+                console.log(4)
+                console.log(_this.$left)
+                if(_this.$left){
+                    let newMove = new StartMove(_this.$left_mask); 
+                    newMove.animateTo({left:80},100,res=>{
+                    });
+                }
+               
             }
             this.$right.onclick = function(){
 
