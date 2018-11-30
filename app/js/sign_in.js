@@ -5,17 +5,20 @@ const sign_in = (function(){
             this.$form_box = document.querySelector(".main .form-box");
             this.$left = this.$form_box.querySelector('.left');
             this.$right = this.$form_box.querySelector('.right');
-            console.log( this.$left)
+            //console.log( this.$left)
             this.$middle = this.$form_box.querySelector('.middle');
             this.$left_mask = this.$middle.firstElementChild;
             this.$right_mask = this.$middle.lastElementChild;
-            console.log(  this.$left_mask)
+            //console.log(  this.$left_mask)
             this.event();
         },
         event(){
             var _this = this;
             this.$left.onclick = function(){
+                
+                _this.$middle.onmouseenter = function(){
 
+                }
             }
             this.$right.onclick = function(){
 

@@ -46,13 +46,14 @@
                     }else{
                         var reg = new reg_Register();
                         var bool = reg.phone(_this.$enter_Reg_form["phone"].value);
-                        if(bool){
+                        if(bool){                         
+                            console.log(this)
                             this.innerHTML=`<i class="codeTime">60</i>秒后重新获取`;
                             let $send_success= this.parentNode.nextElementSibling;
                             $send_success.style.opacity="1";
                             let $codeTime = this.firstElementChild;
-                            //console.log($codeTime)
-                            this.timer = setInterval(_=>{                 
+                            
+                            this.timer = setInterval(_=>{                                      
                                 this.style.opacity="0.5";
                                 let val =$codeTime.innerHTML; 
                                 val--;   
@@ -100,8 +101,10 @@
                                                 _this.$ok.style.display='none';
                                             }else if(res.code=="0"){
                                                 //后台判断合法，才能点击获取验证码
+                                                _this.$sendSmsCode.disable='disable';
                                                 _this.$sendSmsCode.addEventListener('click',$sendSmsCode,false);
                                                 _this.$ok.style.display="block";
+                                                                                         
                                             }
                                         })
                                        
@@ -173,11 +176,11 @@
                         }
                         
                     }//给密码添加失去焦点事件
-                     this.$inputAll[i].onblur =function(){                 
+                     this.$inputAll[i].onblur =function(){              
                         if(this.name=='password'){
+                            _this.passListener = this;
                             _this.password = this.value;
-                            let $suggestion = this.parentNode.parentNode.nextElementSibling;
-                            //$suggestion.style.display="none";
+                            let $suggestion = this.parentNode.parentNode.nextElementSibling;                
                             $suggestion.style.opacity="1";
                              // $suggestion.style.display="none";
                              var count=2;
@@ -213,6 +216,7 @@
                      }  
                 }
                  this.$submit_btn.onclick = _=>{
+                    //this.$submit_btn.addEventListener('click', _this.passListener.blur())
                     let phone=this.$enter_Reg_form["phone"].value;
                     let password = this.password;
                      let $reg_R =  new reg_Register();
@@ -230,7 +234,7 @@
                             method:'post',
                             data:{phone:phone,password:password}  
                           }).then(res=>{
-                            this.$submit_btn.href='sign_in.html';
+                            location.href='sign_in.html';
                           })
                     } 
                  }
