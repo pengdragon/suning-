@@ -77,7 +77,7 @@ a{
     border-bottom: 1px solid #ccc;
     height: 50px;
 }
-.main .form-box a span:hover{
+.main .form-box a:hover{
     color:red;
 }
 .main .form-box .left span{

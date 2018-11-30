@@ -21,11 +21,11 @@
             <div class="main">
                 <div class="form-box">
                     <div class="top">
-                        <a href="" class="left">
+                        <a class="left">
                             <span>扫码登录</span>
                             <i></i>
                         </a>
-                        <a href="" class="right">
+                        <a class="right">
                             <span>账号登录</span>
                             <i></i>
                         </a>
@@ -33,10 +33,24 @@
                     <div class="middle">
                         <div class="left_mask"><img src="../images/sign_in/1.png" alt=""></div>
                         <div class="right_mask"><img src="../images/sign_in/2.png" alt=""></div>
+                        <form action="">
+                            <div> 
+                                <i></i>
+                                <input type="text">
+                            </div>
+                            <div> 
+                                <i></i>
+                                <input type="text">
+                            </div>                           
+                        </form>
                     </div>
+
                 </div>
                
             </div>
             <script src="../js/sign_in.js"></script>
+            <script>
+            sign_in.init();
+            </script>
 </body>
 </html>
