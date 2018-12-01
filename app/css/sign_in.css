@@ -183,6 +183,25 @@ a{
     color:#ccc;
     font-size: 36px;
 }
+.main .form-box .sign .form_input label em{
+    display: block;
+    width: 32px;
+    height: 36px;
+    top: 0;
+    right: 0;
+    background: url("../images/sign_in/function.png") -87px -120px no-repeat;
+    cursor: pointer;
+    position: absolute;
+    display: none;
+}
+.main .form-box .sign .form_input .userreset{
+    top:52px;
+    right:20px;
+}
+.main .form-box .sign .form_input .passreset{
+    top:110px;
+    right:20px;
+}
 .main .form-box .sign #login-submit {
     display: block;
     width: 300px;

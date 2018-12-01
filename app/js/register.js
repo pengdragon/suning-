@@ -23,6 +23,7 @@
     }
     const register = (function(){
         let reg_Password = false;
+        let $aliasTip = null;
         return {
             init(ele){
                 if(typeof ele==="string")
@@ -76,7 +77,7 @@
                     this.$inputAll[i].onfocus = function(){
                         //手机验证
                         if(this.name=='phone'){
-                            let $aliasTip=this.parentNode.parentNode.nextElementSibling;
+                           $aliasTip=this.parentNode.parentNode.nextElementSibling;
                             //console.log($aliasTip)
                              _this.$ok = this.nextElementSibling;
                             $aliasTip.style.opacity="0";
@@ -225,7 +226,7 @@
                     const $inputAll = [this.$inputAll[0],this.$inputAll[2]]
                     for(var i=0;i<arr.length;i++){
                         if(!arr[i]){
-                           $inputAll[i].focus();
+                           //$inputAll[i].focus();
                             break;
                         }
                     }
@@ -234,7 +235,16 @@
                             method:'post',
                             data:{phone:phone,password:password}  
                           }).then(res=>{
-                            location.href='sign_in.html';
+                              //bug将会出现在这里
+                              res = JSON.parse(res);
+                              if(res.code=="0"){
+                                location.href='sign_in.html';
+                              }else if(res.code=="10000"){
+                                $aliasTip.style.opacity="1";
+                                $aliasTip.innerHTML="该手机号已被注册";
+                                _this.$ok.style.display='none';
+                              }
+                          
                           })
                     } 
                  }
