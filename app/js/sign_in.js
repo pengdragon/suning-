@@ -19,6 +19,7 @@ const sign_in = (function(){
             //console.log(this.login_submit);
             this.$username = document.querySelector('#username')
             this.$password =document.querySelector('#password');
+            this.login_error = document.querySelector('.login-error');
             this.event();
         },
         event(){
@@ -60,11 +61,40 @@ const sign_in = (function(){
                 }
                
             }
-           this.$login_submit.onclick =_=>{
-             
+           this.$login_submit.onclick =_=>{   
             let userVal = this.$username.value;
             let passVal = this.$password.value;
-            console.log(userVal);
+            let login_error =  this.login_error.querySelector('span');
+            console.log(login_error);
+            if( userVal==""){
+                
+            }
+            //console.log(userVal);
+            if(userVal&&passVal){
+                sendAjax("../../server/php/sign_in.php",{
+                    data:{username:userVal,password:passVal},
+                    method:'post'
+                })
+                .then(res=>{
+                   
+                    res = JSON.parse(res);
+                    console.log(res);
+                    if(res.code=="10000"){
+                        console.log('成功')
+                        location.href = '../index.html'
+                    }
+                })
+            }else{
+                console.log('密码或用户名不能为空')
+            }
+            
+        }
+        document.onkeydown = e=>{
+            e = e || window.event;
+            var keyCode = e.keyCode || e.which;
+            if(keyCode==13){
+                this.$login_submit.click();
+            }
         }
         }
     }
