@@ -53,8 +53,9 @@ const sign_in = (function(){
             this.$middle.onmouseenter = _=>{
                 if(this.$middle){
                     let newMove = new StartMove(this.$left_mask); 
-                    newMove.animateTo({left:-80},200,res=>{
+                    newMove.animate({left:90},200,res=>{
                         this.$right_mask.style.display="block";
+                        
                     });
                 }
                
@@ -63,7 +64,7 @@ const sign_in = (function(){
                 if(this.$middle){
                     let newMove = new StartMove(this.$left_mask); 
                     this.$right_mask.style.display="none";
-                    newMove.animateTo({left:80},200);
+                    newMove.animate({left:170},200);
                 }
                
             }
