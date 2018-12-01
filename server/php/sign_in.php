@@ -6,7 +6,7 @@
     $coon = new mysqli('localhost', 'root', '', 'db_student_admin',3306); 
     $sql = "select * from user_info where phone='$username' and password='$password'";
     $coon -> query("SET NAMES 'utf8'");//写库 
-
+    //$arr = "{"username":$username,"password":$password}";
     $result = $coon -> query($sql);
     $row = $result -> fetch_assoc();
 

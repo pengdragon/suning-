@@ -119,9 +119,15 @@ const sign_in = (function(){
                     res = JSON.parse(res);
                     console.log(res);
                     if(res.code=="10000"){
-                        console.log('成功');
+                        console.log(userVal);
+                       user = {username:userVal, password:passVal};
+                       user = JSON.stringify(user);
+                       localStorage.setItem("user",user);
                         this.login_error.style.display="none";
-                        location.href = '../index.html'
+                        setTimeout(_=>{
+                            location.href = '../index.html'
+                        },2000);
+                       
                     }else{
                         this.login_error.style.display="block";
                         this.login_error_span.innerHTML = "该账户名不存在，忘记账户名或注册新账号?"

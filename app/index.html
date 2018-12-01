@@ -8,5 +8,14 @@
 </head>
 <body>
 我是首页
+<script>
+
+    var user = localStorage.getItem('user');
+   user= JSON.parse(user);
+    console.log(user);
+    for(var attr in user){
+        console.log(user[attr]);
+    }
+</script>
 </body>
 </html>
