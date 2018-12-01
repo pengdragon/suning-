@@ -169,9 +169,17 @@ a{
 .main .form-box .sign .loginhelp .phoneCode{
     float:left;
     width:102px;
+    line-height: 35px;
+    height: 35px;
+    color:#333;
+    font-size: 12px;
     
 }
 .main .form-box .sign .loginhelp .forgetPass{
     float:right;
     width:60px;
+    line-height: 35px;
+    height: 35px;
+    color:#333;
+    font-size: 12px;
 }
