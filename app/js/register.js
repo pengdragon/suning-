@@ -37,42 +37,7 @@
             },
             event(){
                 var _this = this;
-                const $sendSmsCode = function(){
-                    //console.log(this)
-                    if( _this.$enter_Reg_form["phone"].value==""){
-                        let $aliasTip = _this.$enter_Reg_form["phone"].parentNode.parentNode.nextElementSibling;
-                        //console.log( $aliasTip)
-                        $aliasTip.style.opacity="1";
-                        $aliasTip.innerHTML="请输入注册手机号";
-                    }else{
-                        var reg = new reg_Register();
-                        var bool = reg.phone(_this.$enter_Reg_form["phone"].value);
-                        if(bool){                         
-                            console.log(this)
-                            this.innerHTML=`<i class="codeTime">60</i>秒后重新获取`;
-                            let $send_success= this.parentNode.nextElementSibling;
-                            $send_success.style.opacity="1";
-                            let $codeTime = this.firstElementChild;
-                            
-                            this.timer = setInterval(_=>{                                      
-                                this.style.opacity="0.5";
-                                let val =$codeTime.innerHTML; 
-                                val--;   
-                                $codeTime.innerHTML=val;                                                                                     
-                                if(val==0){
-                                    this.innerHTML='';
-                                    clearInterval(this.timer);
-                                    this.innerHTML ="获取短信验证码";                           
-                                    $send_success.style.opacity='0';
-                                    this.style.opacity="1";
-                                   
-                                }
-                               
-                            },1000)
-                        }
-                        
-                    } 
-                 }
+        
                 for(let i=0;i<this.$inputAll.length;i++){
                     this.$inputAll[i].onfocus = function(){
                         //手机验证
@@ -103,7 +68,7 @@
                                             }else if(res.code=="0"){
                                                 //后台判断合法，才能点击获取验证码
                                                 _this.$sendSmsCode.disable='disable';
-                                                _this.$sendSmsCode.addEventListener('click',$sendSmsCode,false);
+                                                _this.$sendSmsCode.addEventListener('click',_this.eventListener,false);
                                                 _this.$ok.style.display="block";
                                                                                          
                                             }
@@ -250,7 +215,44 @@
                           })
                     } 
                  }
-            }
+            },
+            //短信获取验证码必须对手机号进行监听
+            eventListener(){
+                //console.log(this)
+                if( _this.$enter_Reg_form["phone"].value==""){
+                    let $aliasTip = _this.$enter_Reg_form["phone"].parentNode.parentNode.nextElementSibling;
+                    //console.log( $aliasTip)
+                    $aliasTip.style.opacity="1";
+                    $aliasTip.innerHTML="请输入注册手机号";
+                }else{
+                    var reg = new reg_Register();
+                    var bool = reg.phone(_this.$enter_Reg_form["phone"].value);
+                    if(bool){                         
+                        console.log(this)
+                        this.innerHTML=`<i class="codeTime">60</i>秒后重新获取`;
+                        let $send_success= this.parentNode.nextElementSibling;
+                        $send_success.style.opacity="1";
+                        let $codeTime = this.firstElementChild;
+                        
+                        this.timer = setInterval(_=>{                                      
+                            this.style.opacity="0.5";
+                            let val =$codeTime.innerHTML; 
+                            val--;   
+                            $codeTime.innerHTML=val;                                                                                     
+                            if(val==0){
+                                this.innerHTML='';
+                                clearInterval(this.timer);
+                                this.innerHTML ="获取短信验证码";                           
+                                $send_success.style.opacity='0';
+                                this.style.opacity="1";
+                               
+                            }
+                           
+                        },1000)
+                    }
+                    
+                } 
+             }
         }
     }())
   
