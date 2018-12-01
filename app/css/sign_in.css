@@ -59,7 +59,7 @@ a{
     top:50px;
     right:250px;
 }
-.main .form-box a{
+.main .form-box .left,.main .form-box .right{
     display: block;
     height: 50px;
     width:180px;
@@ -122,6 +122,29 @@ a{
     top:-30px;
     display: none;
 }
+.main .form-box .open-app{
+    display: block;
+    width:300px;
+    height: 17.6px;
+    text-align: center;
+    margin:15px 0;
+    font-size: 12px;
+    position: relative;
+    padding-left:60px;
+}
+.main .form-box .open-app i{
+    height: 16px;
+    width:16px;
+    display: block;
+    position: absolute;
+    background: url(../images/sign_in/function.png) no-repeat left -164px top -67px;
+    left:110px;
+}
+.main .form-box .open-app a{
+    display: inline !important;
+    color:orange;
+
+}
 .main .form-box .sign{
     display: none;
 }
@@ -175,13 +198,14 @@ a{
     text-align: start;
     float:right;
 }
-.main .form-box .sign .form_input label i{
+.main .form-box .sign .form_input label .iconfont-user{
     height: 36px;
     width:36px;
-    display: block;
+    display: block !important;
     float:left;
     color:#ccc;
     font-size: 36px;
+    background:url(../images/sign_in/function.png) no-repeat left -90px top -74px;
 }
 .main .form-box .sign .form_input label em{
     display: block;
@@ -249,6 +273,7 @@ a{
     width:360px;
     height: 16px;
     font-size: 12px;
+    display: block;
 }
 .main .form-box .freereg:hover{
     color:orangered;

@@ -84,7 +84,7 @@
                             this.onblur = function(){
                                 if(this.value==""){
                                     $aliasTip.style.opacity="1";
-                                    $aliasTip.innerHTML="输入不能为空"
+                                    $aliasTip.innerHTML="手机号不能为空"
                                 }else{
                                     var reg = new reg_Register();
                                     var bool = reg.phone(this.value);
@@ -238,7 +238,9 @@
                               //bug将会出现在这里
                               res = JSON.parse(res);
                               if(res.code=="0"){
-                                location.href='sign_in.html';
+                                  setTimeout(_=>{
+                                    location.href='sign_in.html';
+                                  },1000)   
                               }else if(res.code=="10000"){
                                 $aliasTip.style.opacity="1";
                                 $aliasTip.innerHTML="该手机号已被注册";

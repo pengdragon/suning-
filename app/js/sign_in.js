@@ -23,6 +23,7 @@ const sign_in = (function(){
             this.login_error =  this.$('.login-error');
             this.$userreset =  this.$('.userreset');
             this.$passreset =  this.$('.passreset');
+            this.$open_app = this.$(".open-app");
             this.event();
         },
         event(){
@@ -36,6 +37,7 @@ const sign_in = (function(){
                 this.$right_span.style.display="none";
                 //左边的显示
                 this.$left_span.style.display="block";
+                this.$open_app.style.display= 'block';
             }
             this.$right.onclick =e=>{
                 e.returnValue= false;
@@ -46,6 +48,7 @@ const sign_in = (function(){
                 this.$left_span.style.display="none";
                 //右边的显示
                 this.$right_span.style.display="block";
+                this.$open_app.style.display= 'none';
             }
             this.$middle.onmouseenter = _=>{
                 if(this.$middle){
