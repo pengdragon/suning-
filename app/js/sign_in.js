@@ -13,8 +13,12 @@ const sign_in = (function(){
             this.$right_mask = this.$middle.lastElementChild;
             //console.log(  this.$left_mask)
             this.$sign = document.querySelector('.sign');
-            this.$form_input = this.$sign.firstElementChild;
-            console.log(this.$form_input);
+            this.$form_input = document.querySelector('.form-input');
+            //console.log(this.$form_input);
+            this.$login_submit = document.querySelector('#login-submit');
+            //console.log(this.login_submit);
+            this.$username = document.querySelector('#username')
+            this.$password =document.querySelector('#password');
             this.event();
         },
         event(){
@@ -56,8 +60,12 @@ const sign_in = (function(){
                 }
                
             }
-           
-            //this.
+           this.$login_submit.onclick =_=>{
+             
+            let userVal = this.$username.value;
+            let passVal = this.$password.value;
+            console.log(userVal);
+        }
         }
     }
 }())

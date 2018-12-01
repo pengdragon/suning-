@@ -126,7 +126,6 @@ a{
     display: none;
 }
 .main .form-box .sign .form_input{
-    border:1px red solid;
     padding: 40px 30px 20px 30px;
 }
 .main .form-box .sign .form_input label{
@@ -134,12 +133,13 @@ a{
     height: 36px;
     display: block;
     margin-bottom: 20px;
+    border: 1px solid #ccc;
 }
 .main .form-box .sign .form_input label input{
-    width: 100%;
+    width: 264px;
     height: 100%;
     outline: none;
-    border: 1px solid #ccc;
+    border:none;
     text-rendering: auto;
     color: initial;
     letter-spacing: normal;
@@ -149,6 +149,15 @@ a{
     text-shadow: none;
     display: inline-block;
     text-align: start;
+    float:right;
+}
+.main .form-box .sign .form_input label i{
+    height: 36px;
+    width:36px;
+    display: block;
+    float:left;
+    color:#ccc;
+    font-size: 36px;
 }
 .main .form-box .sign #login-submit {
     display: block;
@@ -162,9 +171,15 @@ a{
     text-align: center;
     color: #fff;
 }
+.main .form-box .sign #login-submit:hover{
+    cursor:pointer;
+}
+
 .main .form-box .sign .loginhelp{
-    height: 45px;
+    height: 35px;
     width:300px;
+    margin-left:30px;
+    margin-top:-20px;
 }
 .main .form-box .sign .loginhelp .phoneCode{
     float:left;
@@ -173,7 +188,7 @@ a{
     height: 35px;
     color:#333;
     font-size: 12px;
-    
+    display: block;
 }
 .main .form-box .sign .loginhelp .forgetPass{
     float:right;
@@ -182,4 +197,16 @@ a{
     height: 35px;
     color:#333;
     font-size: 12px;
+    display: block;
+}
+.main .form-box .freereg{
+    text-align: center;
+    margin: 12px 0 35px;
+    color:black;
+    width:360px;
+    height: 16px;
+    font-size: 12px;
+}
+.main .form-box .freereg:hover{
+    color:orangered;
 }
