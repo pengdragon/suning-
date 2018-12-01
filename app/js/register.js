@@ -3,7 +3,6 @@
     $agree_btn.onclick = function(){
        this.parentNode.parentNode.parentNode.style.display='none';
     }
-
     function reg_Register(){
         this.phone=function(str) {
             var reg = /^1[35789]\d{9}$/;
@@ -17,13 +16,13 @@
             var reg = /^\w{6,20}$/;
             return reg.test(str);
         }
-        //^[?!_]{1,}[a-zA-z]{1,}$|
-       //^(?![a-zA-z]+$)(?!\d+$)(?![!@#$%^&*]+$)[a-zA-Z\d!@#$%^&*]+$
-       //字母+数字，字母+特殊字符，数字+特殊字符
     }
     const register = (function(){
         let reg_Password = false;
         let $aliasTip = null;
+        let $$mobileAlias = document.querySelector('#mobileAlias');
+        let $$send_success = document.querySelector('.send-success');
+        let $$sendSmsCode = document.querySelector('#sendSmsCode');
         return {
             init(ele){
                 if(typeof ele==="string")
@@ -33,16 +32,26 @@
                 this.$submit_btn = this.$enter_Reg_form.querySelector('.submit-btn');
                 console.log( this.$submit_btn)
                 this.$sendSmsCode =  this.$enter_Reg_form.querySelector('#sendSmsCode');
+                this.$aliasTip = document.querySelector('#aliasTip')
+                //this.$sendSmsCode.addEventListener('click',this.eventListener,false);
                 this.event();
             },
             event(){
                 var _this = this;
-        
+                this.$sendSmsCode.onclick = function(e){
+                    e = e || window.event;
+                    e.preventDefault();
+                    if(_this.$enter_Reg_form["phone"].value==""){
+                        _this.$aliasTip.style.opacity="1";
+                        _this.$aliasTip.innerHTML="手机号不能为空"
+                    }
+                }
                 for(let i=0;i<this.$inputAll.length;i++){
                     this.$inputAll[i].onfocus = function(){
                         //手机验证
                         if(this.name=='phone'){
                            $aliasTip=this.parentNode.parentNode.nextElementSibling;
+                           //_this.$aliasTip = $aliasTip;
                             //console.log($aliasTip)
                              _this.$ok = this.nextElementSibling;
                             $aliasTip.style.opacity="0";
@@ -67,10 +76,8 @@
                                                 _this.$ok.style.display='none';
                                             }else if(res.code=="0"){
                                                 //后台判断合法，才能点击获取验证码
-                                                _this.$sendSmsCode.disable='disable';
                                                 _this.$sendSmsCode.addEventListener('click',_this.eventListener,false);
-                                                _this.$ok.style.display="block";
-                                                                                         
+                                                _this.$ok.style.display="block";                                            
                                             }
                                         })
                                        
@@ -139,8 +146,7 @@
                                }
                             }   
                            
-                        }
-                        
+                        }   
                     }//给密码添加失去焦点事件
                      this.$inputAll[i].onblur =function(){              
                         if(this.name=='password'){
@@ -148,9 +154,7 @@
                             _this.password = this.value;
                             let $suggestion = this.parentNode.parentNode.nextElementSibling;                
                             $suggestion.style.opacity="1";
-                             // $suggestion.style.display="none";
                              var count=2;
-                             //10个字符 length=10
                              if(0<this.value.length&&this.value.length<6){
                                 $suggestion.innerHTML="请输入6-20位密码";
                                 return;
@@ -191,7 +195,7 @@
                     const $inputAll = [this.$inputAll[0],this.$inputAll[2]]
                     for(var i=0;i<arr.length;i++){
                         if(!arr[i]){
-                           //$inputAll[i].focus();
+                            $inputAll[i].focus();
                             break;
                         }
                     }
@@ -211,47 +215,35 @@
                                 $aliasTip.innerHTML="该手机号已被注册";
                                 _this.$ok.style.display='none';
                               }
-                          
                           })
                     } 
                  }
             },
             //短信获取验证码必须对手机号进行监听
             eventListener(){
-                //console.log(this)
-                if( _this.$enter_Reg_form["phone"].value==""){
-                    let $aliasTip = _this.$enter_Reg_form["phone"].parentNode.parentNode.nextElementSibling;
-                    //console.log( $aliasTip)
-                    $aliasTip.style.opacity="1";
-                    $aliasTip.innerHTML="请输入注册手机号";
-                }else{
+                $$sendSmsCode.disabled='disabled';
+                   console.log($$mobileAlias)
                     var reg = new reg_Register();
-                    var bool = reg.phone(_this.$enter_Reg_form["phone"].value);
+                    var bool = reg.phone($$mobileAlias.value);
                     if(bool){                         
-                        console.log(this)
-                        this.innerHTML=`<i class="codeTime">60</i>秒后重新获取`;
-                        let $send_success= this.parentNode.nextElementSibling;
-                        $send_success.style.opacity="1";
-                        let $codeTime = this.firstElementChild;
-                        
-                        this.timer = setInterval(_=>{                                      
-                            this.style.opacity="0.5";
+                         $$sendSmsCode.innerHTML=`<i class="codeTime">60</i>秒后重新获取`;
+                        $$send_success.style.opacity="1";
+                        let $codeTime = $$sendSmsCode.firstElementChild;
+                        $$sendSmsCode.timer = setInterval(_=>{                                      
+                            $$sendSmsCode.style.opacity="0.5";
                             let val =$codeTime.innerHTML; 
                             val--;   
                             $codeTime.innerHTML=val;                                                                                     
                             if(val==0){
-                                this.innerHTML='';
-                                clearInterval(this.timer);
-                                this.innerHTML ="获取短信验证码";                           
-                                $send_success.style.opacity='0';
-                                this.style.opacity="1";
-                               
+                                $$sendSmsCode.disabled='';
+                                $$sendSmsCode.innerHTML='';
+                                clearInterval($$sendSmsCode.timer);
+                                $$sendSmsCode.innerHTML ="获取短信验证码";                           
+                                $$send_success.style.opacity='0';
+                                $$sendSmsCode.style.opacity="1";
                             }
-                           
                         },1000)
-                    }
-                    
-                } 
+                    }        
              }
         }
     }())
