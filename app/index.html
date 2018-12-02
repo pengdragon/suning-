@@ -1,21 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/banner.css">
 </head>
-<body>
-我是首页
-<script>
 
-    var user = localStorage.getItem('user');
-   user= JSON.parse(user);
-    console.log(user);
-    for(var attr in user){
-        console.log(user[attr]);
-    }
-</script>
+<body>
+    <div class="qf-banner">
+        <div class="banner-inner fade">
+            <div>
+                <img src="images/banner/0.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/banner/1.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/banner/2.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/banner/3.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/banner/4.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/banner/5.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/banner/6.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/banner/7.jpg" alt="">
+            </div>
+        </div>
+        <ul class="banner-tip">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="js/move1.1.0.js"></script>
+    <script src="js/swiper2.0.js"></script>
+    <script src="js/changeImg.js"></script>
+    <script>
+       var swiper = new Swiper({
+           el: '.qf-banner',
+           autoPlay: true
+       });
+       swiper.init();
+       
+    </script>
 </body>
+
 </html>

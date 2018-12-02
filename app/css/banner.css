@@ -1,0 +1,84 @@
+/* 轮播图 */
+* {
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style: none;
+}
+img {
+    display: block;
+}
+a {
+    text-decoration:  none;
+    color: #fff;
+}
+.qf-banner {
+    position: relative;
+    width: 830px;
+    height: 482px;
+    margin: 0 auto;
+    /* overflow: hidden; */
+}
+/* 点击后显示 */
+.banner-inner div.active {
+    display: block;
+}
+/* 渐变的样式 */
+.banner-inner.fade div{
+    display: none;
+}
+.banner-inner.fade div{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.banner-inner.fade div.active {
+    display: block;
+}
+/* 作用滑动的样式 */
+.banner-inner.slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 9999px;
+    height: 240px;
+}
+.banner-inner.slide div {
+    float: left;
+}
+
+.banner-tip {
+    position: absolute;
+    bottom: 129px;
+    right: 283px;
+}
+.banner-tip li {
+    display: inline-block;
+    margin-right: 7px;
+    width: 20px;
+    height: 20px;
+    background-color:white;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity:0.5;
+}
+.banner-tip li.active {
+    opacity: 1;
+    background-color:orange;
+}
+.left-btn, .right-btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -23px;
+    width: 35px;
+    height: 46px;
+    background-image: url(../images/pre.png);
+}
+.left-btn {
+    left: 25px;
+}
+.right-btn {
+    right: 25px;
+    background-position: -45px, 0;
+}
