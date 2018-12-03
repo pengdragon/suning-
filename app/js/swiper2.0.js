@@ -27,7 +27,7 @@ function Swiper(obj) {
 // 初始化函数
 Swiper.prototype.init = function(index) {
     this.showImage(index);
-   // this.autoPlay();
+    this.autoPlay();
     this.btn();
 }
 // 展示图片

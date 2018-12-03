@@ -13,12 +13,13 @@ a {
     text-decoration:  none;
     color: #fff;
 }
-.qf-banner {
+.sn-banner {
     position: relative;
     width: 830px;
     height: 482px;
     margin: 0 auto;
-    /* overflow: hidden; */
+    overflow: hidden;
+    top:183px;
 }
 /* 点击后显示 */
 .banner-inner div.active {
@@ -42,7 +43,7 @@ a {
     left: 0;
     top: 0;
     width: 9999px;
-    height: 240px;
+    height: 482px;
 }
 .banner-inner.slide div {
     float: left;
@@ -73,12 +74,20 @@ a {
     margin-top: -23px;
     width: 35px;
     height: 46px;
-    background-image: url(../images/pre.png);
+    background: red;
+    display: none;
 }
 .left-btn {
     left: 25px;
+    background: url(../images/banner/left1.png);
 }
+/* .left-btn:hover{
+    background: url(../images/banner/left2.png);
+} */
 .right-btn {
     right: 25px;
-    background-position: -45px, 0;
+    background: url(../images/banner/right1.png);
 }
+/* .right-btn:hover{
+    background: url(../images/banner/right2.png);
+} */

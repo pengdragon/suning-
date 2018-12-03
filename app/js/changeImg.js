@@ -1,6 +1,8 @@
 function ChangeImage(obj) {
     Swiper.call(this, obj);
-
+    if(typeof obj.el === 'string') {
+        obj.el = document.querySelector(obj.el);
+    }
     this.$imageBox = this.$el.querySelector('.banner-inner');
     // 获取一张图片的宽
     this.$width = this.$el.clientWidth;
@@ -13,17 +15,7 @@ function ChangeImage(obj) {
     // 给上一页下一页添加点击事件
     this.$nextBtn = this.$el.querySelector('.right-btn');
     this.$preBtn = this.$el.querySelector('.left-btn');
-    
-    // this.$el =  obj.el;
-    // // 找到小圆点的盒子
-    // this.$tipsBox = this.$el.querySelector('.banner-tip');
-    // // 获取所有的小圆点
-    // this.$allTips = this.$tipsBox.querySelectorAll('li');
-    // // 找到所有的图片
-    // this.$allImage = this.$el.querySelectorAll('.banner-inner>div');
-    // // 当前展示图片的索引
-    // this.index = obj.index || 0;
-    // this.timer = null;
+
 }
 //寄生组合模式
 var fn = function() {}
@@ -37,10 +29,28 @@ ChangeImage.prototype.init = function() {
     this.$nextBtn.onclick = () => {
         this.next();
     }
-    this.$preBtn.onclick = () => {
-        this.prev()
+    this.$el.onmouseover = () =>{
+        this.show();
     }
-    this.btn();
+    this.$el.onmouseleave = () =>{
+        this.hidden();
+    }
+     this.$nextBtn.onmouseover = () =>{
+        this.$nextBtn.style.background = "orange"
+    }
+    this.$nextBtn.onmouseleave = () =>{
+        this.$nextBtn.style.background = "blue";
+    }
+    this.$preBtn.onmouseover = () =>{
+        this.$preBtn.style.background = "red"
+    }
+    this.$preBtn.onmouseout = () =>{
+        this.$preBtn.style.background ='url(../images/banner/left1.png)';
+    }
+   this.$preBtn.onclick = () => {
+        this.prev();
+    }
+     this.btn();
 }
 ChangeImage.prototype.showImage = function(index) {
     if(index >= 0) {
@@ -69,4 +79,12 @@ ChangeImage.prototype.prev = function() {
     this.index--;
     this.showImage();
     this.autoPlay();
+}
+ChangeImage.prototype.show = function(){
+    this.$nextBtn.style.display="block";
+    this.$preBtn.style.display = "block";
+}
+ChangeImage.prototype.hidden = function(){
+    this.$nextBtn.style.display="none";
+    this.$preBtn.style.display = "none";
 }

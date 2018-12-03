@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <div class="qf-banner">
-        <div class="banner-inner fade">
+    <div class="sn-banner">
+        <div class="banner-inner slide">
             <div>
                 <img src="images/banner/0.jpg" alt="">
             </div>
@@ -37,6 +37,8 @@
                 <img src="images/banner/7.jpg" alt="">
             </div>
         </div>
+        <div class="left-btn "></div>
+        <div class="right-btn"></div>
         <ul class="banner-tip">
             <li></li>
             <li></li>
@@ -52,12 +54,11 @@
     <script src="js/swiper2.0.js"></script>
     <script src="js/changeImg.js"></script>
     <script>
-       var swiper = new Swiper({
-           el: '.qf-banner',
-           autoPlay: true
+       var changeIname = new ChangeImage({
+           el: '.sn-banner'
        });
-       swiper.init();
-       
+       changeIname.init();
+
     </script>
 </body>
 
