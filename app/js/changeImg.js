@@ -36,16 +36,16 @@ ChangeImage.prototype.init = function() {
         this.hidden();
     }
      this.$nextBtn.onmouseover = () =>{
-        this.$nextBtn.style.background = "orange"
+        this.$nextBtn.style.background = "url(images/banner/right2.png)"
     }
     this.$nextBtn.onmouseleave = () =>{
-        this.$nextBtn.style.background = "blue";
+        this.$nextBtn.style.background = "url(images/banner/right1.png)";
     }
     this.$preBtn.onmouseover = () =>{
-        this.$preBtn.style.background = "red"
+        this.$preBtn.style.background ='url(images/banner/left2.png)';
     }
     this.$preBtn.onmouseout = () =>{
-        this.$preBtn.style.background ='url(../images/banner/left1.png)';
+        this.$preBtn.style.background ='url(images/banner/left1.png)';
     }
    this.$preBtn.onclick = () => {
         this.prev();

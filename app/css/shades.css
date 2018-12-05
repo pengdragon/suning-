@@ -1,0 +1,14 @@
+ .shades{
+    width:816px;
+    position: absolute;
+    z-index: 1;
+    bottom: 7px;
+    left:9px;
+}
+ .shades li{
+    height: 122px;
+    width:202px;
+    float:left;
+    background: blue;
+    margin-right:1px;
+}

@@ -11,7 +11,7 @@ function move($ele, targetObj, time = 200, callback) {
     }
     // 确保是dom对象以后, 在清除定时器
     // debugger
-    console.log($ele);
+    //console.log($ele);
     clearInterval($ele.timer);
 
     // 获取每个属性的速度
@@ -27,7 +27,7 @@ function move($ele, targetObj, time = 200, callback) {
         var speed = (targetObj[attr] - attrVal) / (time / 10);
         speedObj[attr] = speed.toFixed(2) - 0;
     }
-    console.log(speedObj);
+    //console.log(speedObj);
 
     $ele.timer = setInterval(_ => {
 
@@ -58,7 +58,7 @@ function move($ele, targetObj, time = 200, callback) {
         if(flag) {
             clearInterval($ele.timer);
             // 目标已到达指定位置, 请指示
-            console.log('目标已到达指定位置, 请指示');
+            //console.log('目标已到达指定位置, 请指示');
             if(typeof callback == 'function') {
                 callback($ele);
             }
