@@ -19,7 +19,6 @@ a {
     height: 482px;
     margin: 0 auto;
     overflow: hidden;
-    top:147px;
 }
 /* 点击后显示 */
 .banner-inner div.active {

@@ -1,14 +1,36 @@
  .shades{
     width:816px;
-    position: absolute;
-    z-index: 1;
-    bottom: 7px;
+    height: 122px;
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    z-index: 10;
+    top:354px;
     left:9px;
 }
  .shades li{
     height: 122px;
-    width:202px;
-    float:left;
+    width:707px;
     background: blue;
-    margin-right:1px;
+    position: absolute;
+   
+}
+.shades li:nth-child(2){
+    background: orangered;
+    /* left:202px; */
+}
+.shades li:nth-child(3){
+    background: honeydew;
+    /* left:404px; */
+}
+.shades li:nth-child(4){
+    background: green;
+    /* left:606px; */
+}
+#contentp{
+    width:1520px;
+    height: 482px;
+    margin:0 auto;
+    background: pink;
+    margin-top:184px;
 }
